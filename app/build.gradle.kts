@@ -4,9 +4,12 @@ plugins {
 }
 afterEvaluate{
     println("current folder: " + System.getProperty("user.dir"))
-    println(Runtime.getRuntime().exec("cmake -S ./app/src/main/cpp/generator/ -B ./app/src/main/cpp/generator/build/"))
-
-    println(Runtime.getRuntime().exec("cmake --build ./app/src/main/cpp/generator/build/"))
+    val cmd1 = Runtime.getRuntime().exec("cmake -S ./app/src/main/cpp/generator/ -B ./app/src/main/cpp/generator/build/")
+    cmd1.waitFor()
+    println(cmd1.inputReader().readText())
+    val cmd2 = Runtime.getRuntime().exec("cmake --build ./app/src/main/cpp/generator/build/")
+    cmd2.waitFor()
+    println(cmd2.inputReader().readText())
 }
 android {
 
