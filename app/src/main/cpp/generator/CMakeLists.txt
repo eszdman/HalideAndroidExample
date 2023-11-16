@@ -18,5 +18,6 @@ add_halide_library(sample
 )
 
 add_executable(halideGenerators dummy.cpp)
-target_link_libraries(halideGenerators sample)
-target_link_libraries(halideGenerators sample.runtime)
+add_dependencies(halideGenerators sample sample.runtime)
+#target_link_libraries(halideGenerators sample)
+#target_link_libraries(halideGenerators sample.runtime)
