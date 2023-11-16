@@ -2,6 +2,6 @@
 // Created by eszdman on 16.11.2023.
 //
 
-int main(){
+int dummy(){
     return 0;
 }
