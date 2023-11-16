@@ -4,7 +4,7 @@ project(halideGenerators)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(PMERGE_TARGET arm-64-android-armv81a-arm_dot_prod-arm_fp16-vulkan-vk_int16-profile)
+set(PMERGE_TARGET arm-64-android-armv81a-arm_dot_prod-arm_fp16-opencl-profile)
 
 find_package(Halide REQUIRED)
 

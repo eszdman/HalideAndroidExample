@@ -31,12 +31,14 @@ include_directories(generator/include)
 add_library(${CMAKE_PROJECT_NAME} SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         native-lib.cpp)
-
+find_package(xdl REQUIRED CONFIG)
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
 # build script, prebuilt third-party libraries, or Android system libraries.
 target_link_libraries(${CMAKE_PROJECT_NAME}
+
         # List libraries link to the target library
+        xdl::xdl
         ${CMAKE_CURRENT_SOURCE_DIR}/generator/build/sample.a
         ${CMAKE_CURRENT_SOURCE_DIR}/generator/build/sample.runtime.a
         android

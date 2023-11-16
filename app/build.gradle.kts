@@ -18,7 +18,9 @@ afterEvaluate{
         error(err2)
 }
 android {
-
+    buildFeatures {
+        prefab = true
+    }
     namespace = "com.example.halideandroidexample"
     compileSdk = 33
 
@@ -67,7 +69,7 @@ android {
 }
 
 dependencies {
-
+    implementation("io.github.hexhacking:xdl:2.0.0")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
