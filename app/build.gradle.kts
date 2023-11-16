@@ -7,11 +7,15 @@ afterEvaluate{
     val cmd1 = Runtime.getRuntime().exec("cmake -S ./app/src/main/cpp/generator/ -B ./app/src/main/cpp/generator/build/")
     cmd1.waitFor()
     println(cmd1.inputReader().readText())
-    println(cmd1.errorReader().readText())
+    val err1 = cmd1.errorReader().readText()
+    if(err1 != "")
+        error(err1)
     val cmd2 = Runtime.getRuntime().exec("cmake --build ./app/src/main/cpp/generator/build/")
     cmd2.waitFor()
     println(cmd2.inputReader().readText())
-    println(cmd2.errorReader().readText())
+    val err2 = cmd2.errorReader().readText()
+    if(err2 != "")
+        error(err2)
 }
 android {
 
