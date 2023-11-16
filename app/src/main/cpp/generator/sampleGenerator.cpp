@@ -15,6 +15,9 @@ public:
         output(x) = input(x)*2;
         output.set_estimates({{0, 256}});
         input.set_estimates({{0, 256}});
+        if(!using_autoscheduler()) {
+            output.compute_root();
+        }
     }
 };
 

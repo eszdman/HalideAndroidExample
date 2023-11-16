@@ -19,5 +19,3 @@ add_halide_library(sample
 
 add_library(halideGenerators dummy.cpp)
 add_dependencies(halideGenerators sample sample.runtime)
-#target_link_libraries(halideGenerators sample)
-#target_link_libraries(halideGenerators sample.runtime)

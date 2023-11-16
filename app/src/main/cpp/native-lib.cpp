@@ -16,6 +16,9 @@ Java_com_example_halideandroidexample_MainActivity_stringFromJNI(
     halide_set_error_handler([](void *user_context, const char *msg) {
         LOGE("Halide error: %s\n", msg);
     });
+    halide_set_custom_print([](void *user_context, const char *msg) {
+        LOGD("Halide: %s\n", msg);
+    });
     std::string hello = "Hello from C++ Halide! ";
     Halide::Runtime::Buffer<uint16_t> buff1(256);
     Halide::Runtime::Buffer<uint16_t> buff2(256);
