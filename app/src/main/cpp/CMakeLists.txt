@@ -40,4 +40,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/generator/build/sample.a
         ${CMAKE_CURRENT_SOURCE_DIR}/generator/build/sample.runtime.a
         android
+        vulkan
         log)

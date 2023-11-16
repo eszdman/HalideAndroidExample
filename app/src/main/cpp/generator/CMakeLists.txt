@@ -4,7 +4,7 @@ project(halideGenerators)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(PMERGE_TARGET arm-64-android-armv81a-arm_dot_prod-arm_fp16)
+set(PMERGE_TARGET arm-64-android-armv81a-arm_dot_prod-arm_fp16-vulkan-vk_int16)
 
 find_package(Halide REQUIRED)
 
@@ -14,10 +14,8 @@ add_halide_library(sample
                    FROM sampleGenerator
                    GENERATOR sample
                    TARGETS ${PMERGE_TARGET}
-                   AUTOSCHEDULER Halide::Mullapudi2016
+                   #AUTOSCHEDULER Halide::Mullapudi2016
 )
 
 add_library(halideGenerators dummy.cpp)
 add_dependencies(halideGenerators sample sample.runtime)
-#target_link_libraries(halideGenerators sample)
-#target_link_libraries(halideGenerators sample.runtime)

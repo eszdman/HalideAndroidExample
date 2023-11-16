@@ -22,7 +22,15 @@ Java_com_example_halideandroidexample_MainActivity_stringFromJNI(
     for(int i =0; i<256; i++){
         buff1(i) = i;
     }
+    bool zerocopy = false;
+    if(zerocopy)
+        buff1.set_host_dirty(false);
     sample(buff1,buff2);
+    if(zerocopy)
+        buff2.set_device_dirty(false);
+    else {
+        buff2.copy_to_host();
+    }
     for(int i =0; i<256; i++){
         hello += std::to_string(buff2(i)) + ", ";
     }
