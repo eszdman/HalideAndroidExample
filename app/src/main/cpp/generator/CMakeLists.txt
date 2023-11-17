@@ -19,3 +19,7 @@ add_halide_library(sample
 
 add_library(halideGenerators dummy.cpp)
 add_dependencies(halideGenerators sample sample.runtime)
+
+file(DOWNLOAD
+        https://raw.githubusercontent.com/halide/Halide/main/src/runtime/HalideRuntimeOpenCL.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/HalideRuntimeOpenCL.h)

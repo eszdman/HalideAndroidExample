@@ -12,7 +12,7 @@ public:
     Var x{"x"},tx{"tx"}, y{"y"};
     void generate() {
 
-        output(x) = input(x)*2;
+        output(x) = input(x)*2 + 1;
         output.set_estimates({{0, 256}});
         input.set_estimates({{0, 256}});
         if(!using_autoscheduler()){
